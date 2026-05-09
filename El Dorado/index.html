@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>El Dorado Tienda Latina — Prairieville's Latin Market</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root{
+    --cream:#faf6ef;
+    --cream-2:#f1ece2;
+    --tan:#b08658;
+    --tan-2:#c89a6b;
+    --tan-deep:#8f6a3f;
+    --ink:#1a1a1a;
+    --ink-2:#2a2a2a;
+    --muted:#6b6b6b;
+    --green:#2f5d3a;
+    --red:#b94a3d;
+    --fb:#1877f2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ---------------- HEADER ---------------- */
+  .top-bar{background:#000;height:14px}
+  header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1280px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#3a6b48,#74a564);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;letter-spacing:.5px;border:2px solid #2f5d3a;position:relative;overflow:hidden}
+  .logo-mark::after{content:"";position:absolute;inset:6px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#9bcc7a,#3a7a4a);}
+  .logo-mark span{position:relative;z-index:2;font-size:11px}
+  .logo-text{display:flex;flex-direction:column;line-height:1}
+  .logo-text .brand{color:var(--tan);font-weight:800;font-size:20px;letter-spacing:.5px}
+  .logo-text .sub{color:#9c8867;font-size:9px;letter-spacing:3px;margin-top:3px;font-weight:600}
+  nav ul{display:flex;list-style:none;gap:34px;align-items:center}
+  nav a{font-size:14px;font-weight:500;color:#222;transition:color .15s}
+  nav a:hover{color:var(--tan)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .phone{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#222;transition:color .15s}
+  .phone:hover{color:var(--tan)}
+  .phone i{color:var(--tan)}
+  a.tel-link{color:var(--tan);font-weight:700;transition:color .15s}
+  a.tel-link:hover{color:var(--tan-deep);text-decoration:underline}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s,filter .15s}
+  .btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .btn-tan{background:var(--tan);color:#fff}
+  .btn-dark{background:#5b3622;color:#fff}
+  .btn-fb{background:var(--fb);color:#fff}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-cream{background:#e9dcc4;color:#3a2a18}
+  .btn-outline{background:#fff;color:#222;border:1px solid #ddd}
+  .btn-lg{padding:14px 24px;font-size:15px}
+
+  /* ---------------- HERO ---------------- */
+  .hero{position:relative;height:calc(100vh - 86px);min-height:640px;overflow:hidden;color:#fff;display:flex;align-items:center}
+  .hero-bg{position:absolute;inset:0;background-image:url('images/PHOTO-2026-05-08-14-12-52-9.jpg');background-size:cover;background-position:center;filter:brightness(.7)}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 60%,rgba(0,0,0,.15) 100%)}
+  .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:500;letter-spacing:.5px;margin-bottom:18px;opacity:.95}
+  .hero h1{font-size:clamp(40px,6vw,84px);font-weight:800;line-height:1.02;letter-spacing:-1.5px;max-width:900px}
+  .hero h1 .accent{color:var(--tan-2);font-style:normal;display:block}
+  .hero p.lead{font-size:16px;line-height:1.6;max-width:560px;margin:22px 0 30px;opacity:.95}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;align-items:center;font-size:14px}
+  .hero-meta .item{display:flex;align-items:center;gap:8px}
+  .stars{color:#f5b542;letter-spacing:1px}
+  .scroll-indicator{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:3;color:#fff;text-align:center;font-size:11px;letter-spacing:3px;opacity:.85}
+  .scroll-indicator i{display:block;margin-top:4px;animation:bounce 1.8s infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ---------------- PRODUCTS ---------------- */
+  section{padding:90px 0}
+  .pill{display:inline-block;background:#f1e3cc;color:var(--tan-deep);padding:6px 16px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:18px}
+  .section-title{font-size:clamp(32px,4vw,48px);font-weight:800;letter-spacing:-1px;text-align:center}
+  .section-sub{color:#666;font-size:16px;text-align:center;max-width:620px;margin:14px auto 0;line-height:1.6}
+  .section-head{text-align:center;margin-bottom:50px}
+  .grid-products{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .product-card{display:block;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1/1;color:#fff;cursor:pointer;transition:transform .25s,box-shadow .25s}
+  .product-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.15)}
+  .product-card .ph{transition:transform .8s ease}
+  .product-card:hover .ph{transform:scale(1.06)}
+  .product-card .view-more{position:absolute;top:12px;right:12px;z-index:3;background:rgba(255,255,255,.95);color:var(--tan-deep);padding:7px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;display:flex;align-items:center;gap:6px;opacity:0;transform:translateY(-6px);transition:opacity .25s, transform .25s;backdrop-filter:blur(4px)}
+  .product-card:hover .view-more{opacity:1;transform:translateY(0)}
+  .product-card .view-more i{font-size:10px}
+  .product-card .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+  .product-card.solid{display:flex;flex-direction:column;justify-content:space-between;padding:18px}
+  .product-card.solid .icon{font-size:32px;opacity:.95}
+  .product-card .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.15) 60%,rgba(0,0,0,0) 100%)}
+  .product-card .label{position:absolute;left:16px;right:16px;bottom:14px;z-index:2}
+  .product-card.solid .label{position:relative;left:auto;right:auto;bottom:auto}
+  .product-card .label h4{font-size:16px;font-weight:700;line-height:1.2}
+  .product-card .label p{font-size:12px;opacity:.85;margin-top:3px}
+  .pc-frozen{background:#2f5d3a}
+  .pc-spices{background:#6e3a2a}
+  .pc-meat{background:#a13f31}
+  .pc-candy{background:#b08658}
+  .pc-house{background:#8f5a32}
+  .center-cta{text-align:center;margin-top:42px}
+
+  /* ---------------- WHY US ---------------- */
+  .why{background:var(--cream-2)}
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .feature{background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .feature .ic{font-size:22px;margin-bottom:18px}
+  .feature h3{font-size:17px;font-weight:700;margin-bottom:10px}
+  .feature p{color:#666;font-size:14px;line-height:1.6}
+  .ic-leaf{color:#7a9a4a}.ic-globe{color:var(--tan)}.ic-heart{color:#2f5d3a}.ic-pin{color:var(--red)}
+
+  /* ---------------- STATS ---------------- */
+  .stats-wrap{padding:0 0 90px;background:var(--cream-2)}
+  .stats{background:linear-gradient(90deg,#a87b4a 0%,#8b6034 100%);border-radius:14px;display:grid;grid-template-columns:repeat(4,1fr);padding:38px 20px;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+  .stat{text-align:center;border-right:1px solid rgba(255,255,255,.18)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1}
+  .stat .num i{color:#f5b542;font-size:24px;margin-right:4px;vertical-align:middle}
+  .stat .lbl{font-size:13px;opacity:.92;margin-top:8px;letter-spacing:.3px}
+
+  /* ---------------- FACEBOOK ---------------- */
+  .fb-section{background:#111;color:#fff;padding:80px 0}
+  .fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .fb-eyebrow{color:var(--tan-2);font-size:13px;font-weight:600;margin-bottom:14px}
+  .fb-section h2{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:18px}
+  .fb-section p{color:#bdbdbd;font-size:15px;line-height:1.7;margin-bottom:22px;max-width:480px}
+  .fb-list{list-style:none;margin-bottom:26px}
+  .fb-list li{display:flex;align-items:center;gap:10px;color:#d8d8d8;font-size:14px;padding:6px 0}
+  .fb-list i{color:var(--tan-2)}
+  .fb-card{background:#fff;color:#111;border-radius:14px;padding:18px;position:relative;box-shadow:0 12px 36px rgba(0,0,0,.4)}
+  .fb-card-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .fb-avatar{width:38px;height:38px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;color:#999}
+  .fb-card-head .name{font-weight:700;font-size:14px}
+  .fb-card-head .time{font-size:12px;color:#888}
+  .live{position:absolute;top:14px;right:14px;background:var(--red);color:#fff;font-size:11px;padding:4px 10px;border-radius:999px;font-weight:600}
+  .fb-card .post{font-size:14px;line-height:1.55;margin-bottom:12px}
+  .fb-img{height:170px;border-radius:8px;background-image:url('images/PHOTO-2026-05-08-14-12-53-11.jpg');background-size:cover;background-position:center;margin-bottom:12px}
+  .fb-stats{display:flex;justify-content:space-between;font-size:12px;color:#777;border-top:1px solid #eee;padding-top:10px}
+  .fb-stats .left{color:var(--fb);font-weight:600}
+
+  /* ---------------- VISIT / MAP ---------------- */
+  .visit{background:var(--cream)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .map-card{border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.08);background:#fff;height:380px;position:relative}
+  .map-card iframe{width:100%;height:100%;border:0;display:block}
+  .map-info{position:absolute;left:16px;right:16px;bottom:14px;background:#fff;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+  .map-info .pin{width:34px;height:34px;border-radius:50%;background:#f1e3cc;color:var(--tan);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .map-info .meta h5{font-size:13px;font-weight:700}
+  .map-info .meta p{font-size:11px;color:#777}
+  .map-info .btn{margin-left:auto;padding:8px 14px;font-size:12px}
+  .visit h2{font-size:40px;font-weight:800;letter-spacing:-1px;margin:14px 0}
+  .visit > .container > .visit-grid > div > p.lead{color:#666;font-size:15px;line-height:1.7;margin-bottom:24px}
+  .info-list{list-style:none;margin-bottom:26px}
+  .info-list li{display:flex;align-items:flex-start;gap:14px;padding:12px 0}
+  .info-list .ic{width:36px;height:36px;border-radius:50%;background:#f1e3cc;color:var(--tan);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .info-list h5{font-size:14px;font-weight:700}
+  .info-list .v{font-size:14px;color:#555;margin-top:2px}
+  .info-list .v.link{color:var(--tan);font-weight:600}
+  .visit-ctas{display:flex;gap:12px}
+
+  /* ---------------- FOOTER ---------------- */
+  footer{background:#161616;color:#cfcfcf;padding:64px 0 22px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1.2fr;gap:50px;margin-bottom:36px}
+  .foot-brand p{color:#a8a8a8;font-size:13px;line-height:1.7;margin:18px 0 22px}
+  .foot-socials{display:flex;gap:10px}
+  .foot-socials a{width:36px;height:36px;border-radius:8px;background:#222;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .15s}
+  .foot-socials a:hover{background:var(--tan)}
+  footer h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:18px}
+  .foot-list{list-style:none}
+  .foot-list li{padding:5px 0;font-size:14px}
+  .foot-list a:hover{color:var(--tan)}
+  .foot-contact .row{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#bdbdbd;line-height:1.6;padding:5px 0}
+  .foot-contact .row i{color:var(--tan);margin-top:4px}
+  .foot-hours .hour-row{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;color:#bdbdbd}
+  .foot-hours .hour-row span:last-child{font-weight:700;color:#fff}
+  .google-rating{margin-top:14px;background:#222;padding:10px 14px;border-radius:8px;display:flex;align-items:center;gap:10px;font-size:13px}
+  .google-rating .stars{font-size:13px}
+  .foot-bottom{border-top:1px solid #2a2a2a;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#888;flex-wrap:wrap;gap:10px}
+  .powered-by{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#9a9a9a;letter-spacing:.4px}
+  .powered-by .gl-brand{font-weight:800;letter-spacing:.6px;font-size:13px}
+  .powered-by .gl-brand .geaux{color:#fff}
+  .powered-by .gl-brand .launch{color:#3b82f6}
+  .powered-by .gl-spark{color:#3b82f6;font-size:10px}
+  .powered-by:hover .gl-brand .launch{color:#60a5fa;transition:color .15s}
+
+  /* ---------------- REVIEWS ---------------- */
+  .reviews{background:var(--cream)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:38px}
+  .review-card{background:#fff;border-radius:16px;padding:28px 26px;box-shadow:0 2px 8px rgba(0,0,0,.05);border:1px solid #f0e6d2;display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s}
+  .review-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.08)}
+  .review-card .rating{color:#f5b542;font-size:16px;letter-spacing:2px;margin-bottom:14px}
+  .review-card .quote{font-size:15px;line-height:1.65;color:#333;margin-bottom:20px;flex-grow:1;font-style:italic;position:relative;padding-left:6px}
+  .review-card .reviewer{display:flex;align-items:center;gap:12px;border-top:1px solid #f1e8d8;padding-top:16px}
+  .review-card .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--tan),var(--tan-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+  .review-card .reviewer .name{font-weight:700;font-size:14px;color:#222}
+  .review-card .reviewer .meta{font-size:12px;color:#888;margin-top:2px}
+  .review-card .reviewer .gbadge{margin-left:auto;font-size:11px;color:#777;display:flex;align-items:center;gap:4px}
+  .review-cta{text-align:center}
+
+  /* ---------------- GALLERY / TIENDA ---------------- */
+  .gallery{background:linear-gradient(180deg,var(--cream) 0%, #f5ecdb 100%)}
+  .gallery-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px;margin-bottom:36px}
+  .gallery-head .pill{margin-bottom:14px}
+  .gallery-head h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.1;max-width:640px}
+  .gallery-head p{color:#666;font-size:15px;line-height:1.7;max-width:480px;margin-top:14px}
+  .gallery-head .gh-cta{align-self:end;text-align:right;font-size:13px;color:#666;line-height:1.6}
+  .gallery-head .gh-cta strong{display:block;color:var(--tan-deep);font-size:15px;margin-bottom:4px}
+  .gallery-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+  .tile{display:block;position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#222;transition:transform .25s, box-shadow .25s;color:#fff;text-decoration:none}
+  .tile:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.22)}
+  .tile .view-cta{position:absolute;top:14px;right:14px;z-index:3;background:rgba(255,255,255,.95);color:var(--tan-deep);padding:7px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;display:flex;align-items:center;gap:6px;opacity:0;transform:translateY(-6px);transition:opacity .25s, transform .25s;backdrop-filter:blur(4px)}
+  .tile:hover .view-cta{opacity:1;transform:translateY(0)}
+  .tile .view-cta i{font-size:10px}
+  .tile.feature{grid-column:span 2;grid-row:span 2}
+  .tile.wide{grid-column:span 2}
+  .tile .img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .9s ease}
+  .tile:hover .img{transform:scale(1.07)}
+  .tile .veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.0) 100%)}
+  .tile .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.95);color:var(--tan-deep);padding:6px 12px;border-radius:999px;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;backdrop-filter:blur(4px)}
+  .tile .cap{position:absolute;left:18px;right:18px;bottom:16px;color:#fff;font-size:16px;font-weight:700;line-height:1.25;letter-spacing:.2px}
+  .tile.feature .cap{font-size:22px}
+  .tile .cap span{display:block;font-size:12px;font-weight:500;opacity:.82;margin-top:4px;letter-spacing:.3px}
+  .tile.feature .cap span{font-size:13px}
+  .gallery-foot{margin-top:32px;text-align:center;color:#7a6850;font-size:14px;font-style:italic}
+  @media (max-width:1000px){
+    .gallery-head{grid-template-columns:1fr;text-align:left}
+    .gallery-head .gh-cta{text-align:left}
+    .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+    .tile.feature{grid-column:span 2;grid-row:span 2}
+    .tile.wide{grid-column:span 2}
+  }
+  @media (max-width:560px){
+    .gallery-mosaic{grid-template-columns:1fr;grid-auto-rows:220px}
+    .tile.feature,.tile.wide{grid-column:span 1;grid-row:span 1}
+    .tile.feature{grid-row:span 2}
+  }
+
+  /* ---------------- EMPLOYMENT ---------------- */
+  .employment{background:var(--cream-2)}
+  .emp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  .emp-image{border-radius:16px;overflow:hidden;height:420px;background-image:url('images/PHOTO-2026-05-08-14-12-52.jpg');background-size:cover;background-position:center;box-shadow:0 12px 30px rgba(0,0,0,.12);position:relative}
+  .emp-image::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(143,106,63,.25),rgba(0,0,0,.15))}
+  .emp-content h2{font-size:clamp(30px,3.6vw,42px);font-weight:800;letter-spacing:-1px;margin:14px 0}
+  .emp-content > p.lead{color:#555;font-size:15px;line-height:1.7;margin-bottom:20px}
+  .emp-perks{list-style:none;margin-bottom:28px}
+  .emp-perks li{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:14px;color:#333}
+  .emp-perks i{color:var(--green);width:22px}
+
+  /* ---------------- MODAL ---------------- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px;animation:fadeIn .2s ease}
+  .modal-overlay.active{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .modal{background:#fff;border-radius:16px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.4);animation:slideUp .25s ease;position:relative}
+  .modal-header{padding:28px 32px 18px;border-bottom:1px solid #f1ece2;position:sticky;top:0;background:#fff;border-radius:16px 16px 0 0;z-index:2}
+  .modal-header h3{font-size:24px;font-weight:800;color:#222;letter-spacing:-.5px}
+  .modal-header p{color:#777;font-size:13px;margin-top:4px}
+  .modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:#f4ebda;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#5b3622;font-size:16px;transition:background .15s}
+  .modal-close:hover{background:#e9dcc4}
+  .modal-body{padding:24px 32px 32px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .form-group{margin-bottom:14px}
+  .form-group label{display:block;font-size:13px;font-weight:600;color:#333;margin-bottom:6px}
+  .form-group label .es{color:#888;font-weight:400;font-size:12px;margin-left:6px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1px solid #e1d8c6;border-radius:8px;font-family:inherit;font-size:14px;background:#fdfbf6;transition:border-color .15s, box-shadow .15s}
+  .form-group input[type="file"]{padding:9px 12px;cursor:pointer}
+  .form-group input[type="file"]::-webkit-file-upload-button{margin-right:12px;padding:7px 14px;border:none;border-radius:6px;background:var(--tan);color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s}
+  .form-group input[type="file"]::-webkit-file-upload-button:hover{background:var(--tan-deep)}
+  .form-group input[type="file"]::file-selector-button{margin-right:12px;padding:7px 14px;border:none;border-radius:6px;background:var(--tan);color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s}
+  .form-group input[type="file"]::file-selector-button:hover{background:var(--tan-deep)}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--tan);box-shadow:0 0 0 3px rgba(176,134,88,.15)}
+  .form-group textarea{resize:vertical;min-height:90px}
+  .form-group .star-input{font-size:28px;color:#ddd;cursor:pointer;letter-spacing:6px;user-select:none}
+  .form-group .star-input span{transition:color .15s}
+  .form-group .star-input span.on{color:#f5b542}
+  .modal .btn-submit{width:100%;padding:13px;font-size:15px;justify-content:center;margin-top:6px}
+  .modal-footer-note{font-size:12px;color:#888;text-align:center;margin-top:14px;line-height:1.5}
+  .form-success{display:none;text-align:center;padding:18px 0}
+  .form-success.show{display:block}
+  .form-success i{font-size:54px;color:var(--green);margin-bottom:14px}
+  .form-success h4{font-size:20px;color:#222;margin-bottom:8px;font-weight:700}
+  .form-success p{color:#666;font-size:14px}
+
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width:1000px){
+    nav ul{display:none}
+    .grid-products{grid-template-columns:repeat(2,1fr)}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:repeat(2,1fr);gap:18px 0}
+    .stat{border-right:none;padding:8px 0}
+    .fb-grid,.visit-grid,.emp-grid{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .reviews-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .grid-products{grid-template-columns:1fr 1fr}
+    .features{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .hero h1{font-size:42px}
+    .nav-right .phone{display:none}
+    .reviews-grid{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .modal-header,.modal-body{padding-left:22px;padding-right:22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top black strip -->
+<div class="top-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="#" class="logo">
+      <div class="logo-mark"><span>EL<br>D</span></div>
+      <div class="logo-text">
+        <span class="brand">El Dorado</span>
+        <span class="sub">TIENDA LATINA</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="gallery.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#employment">Employment</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#" data-open-modal="applyModal" style="color:var(--tan);font-weight:700">Apply</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+12254541345" class="phone" aria-label="Call El Dorado Tienda Latina"><i class="fa-solid fa-phone"></i> (225) 454-1345</a>
+      <a href="#location" class="btn btn-tan">Visit Our Store</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" style="padding:0">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Tu Tienda Latina de Confianza · Your Local Latin Market in Prairieville</span>
+    <h1>Fresh Products,<span class="accent">Sabores Auténticos</span></h1>
+    <p class="lead">Discover the warmth of home — descubre el sabor de casa. From imported snacks and fresh bread to everyday essentials, we're here to serve la familia entera with authentic Latin flavors and friendly service.</p>
+    <div class="hero-ctas">
+      <a href="gallery.html" class="btn btn-tan btn-lg">Shop Products · Comprar <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#location" class="btn btn-dark btn-lg"><i class="fa-solid fa-location-dot"></i> Visit Us · Visítanos</a>
+      <a href="#" class="btn btn-fb btn-lg"><i class="fa-brands fa-facebook"></i> Síguenos en Facebook</a>
+    </div>
+    <div class="hero-meta">
+      <div class="item"><span class="stars">★★★★★</span> <strong>5.0</strong> Google Rating</div>
+      <div class="item"><i class="fa-solid fa-shop" style="color:var(--tan-2)"></i> Family-Owned &amp; Operated</div>
+      <div class="item"><i class="fa-solid fa-heart" style="color:var(--tan-2)"></i> Serving the Community</div>
+    </div>
+  </div>
+  <div class="scroll-indicator">SCROLL<i class="fa-solid fa-chevron-down"></i></div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill">Our Products</span>
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-sub">From authentic Latin ingredients to everyday essentials, we stock everything to bring the flavors of home to your table.</p>
+    </div>
+
+    <div class="grid-products">
+      <a href="gallery.html#bread" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-53.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Fresh Bread</h4><p>Semitas &amp; pan dulce</p></div>
+      </a>
+      <a href="gallery.html#snacks" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-52-4.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Latin Snacks</h4><p>Imported favorites</p></div>
+      </a>
+      <a href="gallery.html#drinks" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-51-2.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Imported Drinks</h4><p>Authentic beverages</p></div>
+      </a>
+      <a href="gallery.html#groceries" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-55-8.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Hispanic Groceries</h4><p>Essential staples</p></div>
+      </a>
+      <a href="gallery.html#produce" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-51.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Fresh Produce</h4><p>Fruits &amp; vegetables</p></div>
+      </a>
+
+      <a href="gallery.html#meat" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-50.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Frozen Foods</h4><p>Ready to cook</p></div>
+      </a>
+      <a href="gallery.html#spices" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-55.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Spices &amp; Sauces</h4><p>Authentic flavors</p></div>
+      </a>
+      <a href="gallery.html#meat" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-56-13.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Meat &amp; Dairy</h4><p>Fresh selections</p></div>
+      </a>
+      <a href="gallery.html#candy" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-53-5.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Candy &amp; Sweets</h4><p>Latin favorites</p></div>
+      </a>
+      <a href="gallery.html#household" class="product-card">
+        <div class="ph" style="background-image:url('images/PHOTO-2026-05-08-14-12-52-7.jpg')"></div>
+        <div class="grad"></div>
+        <span class="view-more">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="label"><h4>Household</h4><p>Daily essentials</p></div>
+      </a>
+    </div>
+
+    <div class="center-cta">
+      <a href="gallery.html" class="btn btn-tan btn-lg">View All Products <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill">¿Por Qué El Dorado? · Why El Dorado</span>
+      <h2 class="section-title">Why Families Choose Us</h2>
+      <p class="section-sub">Más que una tienda, somos comunidad. We're more than just a store — we're a community hub where Latin culture and hospitality come together.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="ic ic-leaf"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Fresh Daily · Fresco a Diario</h3>
+        <p>From freshly baked bread to crisp produce, we ensure quality and freshness every single day.</p>
+      </div>
+      <div class="feature">
+        <div class="ic ic-globe"><i class="fa-solid fa-globe"></i></div>
+        <h3>Authentic Imports · Productos Importados</h3>
+        <p>Discover hard-to-find products from Mexico, Central America, South America, and the Caribbean.</p>
+      </div>
+      <div class="feature">
+        <div class="ic ic-heart"><i class="fa-solid fa-heart"></i></div>
+        <h3>Family Service · Trato Familiar</h3>
+        <p>Our warm, welcoming staff treats every customer like family. Aquí te tratamos como en casa.</p>
+      </div>
+      <div class="feature">
+        <div class="ic ic-pin"><i class="fa-solid fa-location-dot"></i></div>
+        <h3>Convenient Location · Ubicación</h3>
+        <p>Easy access in Prairieville with ample parking. Visit us and see why locals love us — ¡ven a visitarnos!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-wrap">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="num"><i class="fa-solid fa-star"></i>5.0</div><div class="lbl">Google Rating · Calificación</div></div>
+      <div class="stat"><div class="num">10+</div><div class="lbl">Categories · Categorías</div></div>
+      <div class="stat"><div class="num">1000+</div><div class="lbl">Products · Productos</div></div>
+      <div class="stat"><div class="num">Daily</div><div class="lbl">Fresh Deliveries · A diario</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS / RESEÑAS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill">Reseñas · Reviews</span>
+      <h2 class="section-title">Loved by the Neighborhood</h2>
+      <p class="section-sub">El cariño de nuestra comunidad — real stories from the families who shop with us every week.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"¡Me encanta esta tienda! The bread is always fresh and the staff feels like family. Finally found my abuela's favorite spices in Prairieville."</p>
+        <div class="reviewer">
+          <div class="avatar">MR</div>
+          <div>
+            <div class="name">María R.</div>
+            <div class="meta">Local customer · 3 weeks ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Hidden gem. Great selection of imported drinks and snacks I can't find anywhere else nearby. Precios justos y todo super fresco."</p>
+        <div class="reviewer">
+          <div class="avatar">JT</div>
+          <div>
+            <div class="name">James T.</div>
+            <div class="meta">Verified customer · 1 month ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Atención excelente y productos auténticos. The owners are wonderful — they greet you by name and always recommend something delicious. Highly recommend!"</p>
+        <div class="reviewer">
+          <div class="avatar">CV</div>
+          <div>
+            <div class="name">Carmen V.</div>
+            <div class="meta">Regular shopper · 2 months ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Best tortillas in town, hands down. My kids beg me to come here every weekend. ¡Una joya para nuestra comunidad!"</p>
+        <div class="reviewer">
+          <div class="avatar">AS</div>
+          <div>
+            <div class="name">Ashley S.</div>
+            <div class="meta">Verified customer · 5 weeks ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Tienen de todo — from fresh produce to my favorite Salvadoran coffee. Clean store, friendly people, and the prices are fair."</p>
+        <div class="reviewer">
+          <div class="avatar">RM</div>
+          <div>
+            <div class="name">Rafael M.</div>
+            <div class="meta">Local customer · 6 weeks ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Such a warm, welcoming place. They went out of their way to help me find ingredients for a family recipe. ¡Mil gracias, El Dorado!"</p>
+        <div class="reviewer">
+          <div class="avatar">LP</div>
+          <div>
+            <div class="name">Linda P.</div>
+            <div class="meta">Verified customer · 2 weeks ago</div>
+          </div>
+          <div class="gbadge"><i class="fa-brands fa-google"></i> Google</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="review-cta">
+      <button type="button" class="btn btn-tan btn-lg" data-open-modal="reviewModal"><i class="fa-solid fa-pen-to-square"></i> Leave a Review · Deja tu reseña</button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY / INSIDE THE STORE -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <span class="pill">Conoce La Tienda · Inside Our Store</span>
+        <h2>A Walk Through El Dorado</h2>
+        <p>Una mirada por dentro — from the bakery shelves to the fresh produce stand, here's a peek at what awaits you when you walk through our doors.</p>
+      </div>
+      <div class="gh-cta">
+        <strong>Open 7 days a week</strong>
+        Stop by · Pásate cuando quieras<br>
+        7AM – 9PM
+      </div>
+    </div>
+
+    <div class="gallery-mosaic">
+      <a href="gallery.html#store" class="tile feature">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-52-9.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Welcome</span>
+        <span class="view-cta">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Our Front Counter<span>Where the warm welcomes start</span></div>
+      </a>
+
+      <a href="gallery.html#produce" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-51.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Produce</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Plátanos &amp; More<span>Always fresh</span></div>
+      </a>
+
+      <a href="gallery.html#snacks" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-53-11.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Snacks</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Bimbo Display<span>Pan dulce favorites</span></div>
+      </a>
+
+      <a href="gallery.html#groceries" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-54-14.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Pantry</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Choco Listo<span>Coffee &amp; chocolate</span></div>
+      </a>
+
+      <a href="gallery.html#groceries" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-56.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Canned</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">La Sirena<span>Stocked daily</span></div>
+      </a>
+
+      <a href="gallery.html#snacks" class="tile wide">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-52-4.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Aisle</span>
+        <span class="view-cta">View Photos <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">The Snack Aisle<span>Botanas para toda la familia</span></div>
+      </a>
+
+      <a href="gallery.html#candy" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-54.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Sweets</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Pan Dulce<span>Baked treats</span></div>
+      </a>
+
+      <a href="gallery.html#spices" class="tile">
+        <div class="img" style="background-image:url('images/PHOTO-2026-05-08-14-12-55-18.jpg')"></div>
+        <div class="veil"></div>
+        <span class="tag">Cooking</span>
+        <span class="view-cta">View <i class="fa-solid fa-arrow-right"></i></span>
+        <div class="cap">Caldos &amp; Sazón<span>Maggi essentials</span></div>
+      </a>
+    </div>
+
+    <p class="gallery-foot">Ven a visitarnos — there's always something new on the shelves.</p>
+  </div>
+</section>
+
+<!-- FACEBOOK -->
+<section class="fb-section">
+  <div class="container">
+    <div class="fb-grid">
+      <div>
+        <div class="fb-eyebrow">Mantente Conectado · Stay Connected</div>
+        <h2>Join Our Community on Facebook</h2>
+        <p>Síguenos en Facebook for the latest updates on fresh arrivals, special offers, community events, and behind-the-scenes glimpses of El Dorado Tienda Latina.</p>
+        <ul class="fb-list">
+          <li><i class="fa-solid fa-check"></i> Be the first to know about new products · Nuevos productos</li>
+          <li><i class="fa-solid fa-check"></i> Exclusive promotions · Promociones exclusivas</li>
+          <li><i class="fa-solid fa-check"></i> Community events · Eventos de la comunidad</li>
+        </ul>
+        <a href="#" class="btn btn-fb btn-lg"><i class="fa-brands fa-facebook"></i> Follow us · Síguenos</a>
+      </div>
+
+      <div class="fb-card">
+        <div class="live">Live Updates</div>
+        <div class="fb-card-head">
+          <div class="fb-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="name">El Dorado Tienda Latina</div>
+            <div class="time">Just now</div>
+          </div>
+        </div>
+        <div class="post">🍞 ¡Buenos días, familia! Fresh bread just arrived! Come visit us today and fill your basket with authentic Latin flavors. ❤️</div>
+        <div class="fb-img"></div>
+        <div class="fb-stats">
+          <span class="left">👍 128</span>
+          <span>24 comments</span>
+          <span>3 shares</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYMENT / EMPLEO -->
+<section class="employment" id="employment">
+  <div class="container">
+    <div class="emp-grid">
+      <div class="emp-image" role="img" aria-label="Friendly grocery team at work"></div>
+      <div class="emp-content">
+        <span class="pill">Empleo · Careers</span>
+        <h2>Join the El Dorado Family</h2>
+        <p class="lead">Únete a nuestra familia. We're always looking for friendly, hard-working people who love serving the community. Bilingual applicants encouraged — ¡se habla español!</p>
+        <ul class="emp-perks">
+          <li><i class="fa-solid fa-circle-check"></i> Competitive pay · Salario competitivo</li>
+          <li><i class="fa-solid fa-circle-check"></i> Flexible scheduling · Horarios flexibles</li>
+          <li><i class="fa-solid fa-circle-check"></i> Friendly, family-oriented team</li>
+          <li><i class="fa-solid fa-circle-check"></i> Employee discounts on store products</li>
+          <li><i class="fa-solid fa-circle-check"></i> Growth opportunities · Oportunidades de crecimiento</li>
+        </ul>
+        <button type="button" class="btn btn-tan btn-lg" data-open-modal="applyModal"><i class="fa-solid fa-briefcase"></i> Apply Now · Solicitar empleo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / MAP -->
+<section class="visit" id="location">
+  <div class="container">
+    <div class="visit-grid">
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=37459+Ultimate+Plaza+Boulevard,+Prairieville,+LA+70769&output=embed" loading="lazy"></iframe>
+        <div class="map-info">
+          <div class="pin"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="meta">
+            <h5>El Dorado Tienda Latina</h5>
+            <p>37459 Ultimate Plaza Blvd</p>
+          </div>
+          <a href="#" class="btn btn-tan">Directions</a>
+        </div>
+      </div>
+
+      <div>
+        <span class="pill">Visítanos · Find Us</span>
+        <h2>Visit Our Store · Visita Nuestra Tienda</h2>
+        <p class="lead">We're conveniently located in Prairieville with ample parking. Ven a vivir la experiencia — come find everything you need for authentic Latin cooking.</p>
+        <ul class="info-list">
+          <li>
+            <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h5>Address · Dirección</h5><div class="v">37459 Ultimate Plaza Boulevard<br>Prairieville, LA 70769</div></div>
+          </li>
+          <li>
+            <div class="ic"><i class="fa-solid fa-phone"></i></div>
+            <div><h5>Phone · Teléfono</h5><div class="v link"><a href="tel:+12254541345" class="tel-link">(225) 454-1345</a></div></div>
+          </li>
+          <li>
+            <div class="ic"><i class="fa-solid fa-clock"></i></div>
+            <div><h5>Store Hours · Horario</h5><div class="v">Open 7 days a week · Abierto los 7 días<br>7:00 AM - 9:00 PM</div></div>
+          </li>
+        </ul>
+        <div class="visit-ctas">
+          <a href="tel:+12254541345" class="btn btn-red btn-lg"><i class="fa-solid fa-phone"></i> Call Now · Llámanos</a>
+          <a href="https://www.google.com/maps?q=37459+Ultimate+Plaza+Boulevard,+Prairieville,+LA+70769" target="_blank" rel="noopener" class="btn btn-cream btn-lg"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions · Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">
+          <div class="logo-mark"><span>EL<br>D</span></div>
+          <div class="logo-text">
+            <span class="brand" style="color:#fff">El Dorado</span>
+            <span class="sub">TIENDA LATINA</span>
+          </div>
+        </a>
+        <p>Serving the Prairieville community with authentic Latin products, fresh groceries, and a warm, family-friendly atmosphere.</p>
+        <div class="foot-socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links · Enlaces</h4>
+        <ul class="foot-list">
+          <li><a href="#home">Home · Inicio</a></li>
+          <li><a href="gallery.html">Products · Productos</a></li>
+          <li><a href="gallery.html">Gallery · Galería</a></li>
+          <li><a href="#reviews">Reviews · Reseñas</a></li>
+          <li><a href="#employment">Employment · Empleo</a></li>
+          <li><a href="#location">Location · Ubicación</a></li>
+          <li><a href="#" data-open-modal="applyModal">Apply Now · Solicitar</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-contact">
+        <h4>Contact Us · Contáctanos</h4>
+        <div class="row"><i class="fa-solid fa-location-dot"></i><div>37459 Ultimate Plaza Boulevard<br>Prairieville, LA 70769</div></div>
+        <div class="row"><i class="fa-solid fa-phone"></i><div><a href="tel:+12254541345" style="color:#bdbdbd;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#bdbdbd'">(225) 454-1345</a></div></div>
+      </div>
+
+      <div class="foot-hours">
+        <h4>Store Hours · Horario</h4>
+        <div class="hour-row"><span>Mon-Fri · Lun-Vie</span><span>7AM - 9PM</span></div>
+        <div class="hour-row"><span>Saturday · Sábado</span><span>7AM - 9PM</span></div>
+        <div class="hour-row"><span>Sunday · Domingo</span><span>8AM - 8PM</span></div>
+        <div class="google-rating">
+          <span class="stars" style="color:#f5b542">★★★★★</span>
+          <span><strong>5.0</strong> on Google</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2026 El Dorado Tienda Latina. All rights reserved.</div>
+      <div>Serving Prairieville, Gonzales, and surrounding communities</div>
+      <a href="https://geauxlaunch.com" target="_blank" rel="noopener" class="powered-by" aria-label="Website by GeauxLaunch">
+        <i class="fa-solid fa-bolt gl-spark"></i>
+        <span>Powered by</span>
+        <span class="gl-brand"><span class="geaux">Geaux</span><span class="launch">Launch</span></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== APPLY MODAL ===================== -->
+<div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="applyTitle">Job Application · Solicitud de Empleo</h3>
+      <p>Fill out the form below and we'll be in touch soon. Llena el formulario y nos pondremos en contacto.</p>
+      <button type="button" class="modal-close" aria-label="Close modal" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="applyForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appFirstName">First Name <span class="es">· Nombre</span></label>
+            <input type="text" id="appFirstName" name="firstName" required autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label for="appLastName">Last Name <span class="es">· Apellido</span></label>
+            <input type="text" id="appLastName" name="lastName" required autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appEmail">Email <span class="es">· Correo</span></label>
+            <input type="email" id="appEmail" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="appPhone">Phone <span class="es">· Teléfono</span></label>
+            <input type="tel" id="appPhone" name="phone" required autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="appResume">Resume Upload <span class="es">· Currículum</span></label>
+          <input type="file" id="appResume" name="resume" accept=".pdf,.doc,.docx,.rtf,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required />
+          <p style="font-size:12px;color:#888;margin-top:6px">Accepted: PDF, DOC, DOCX, RTF, TXT</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appAvailability">Availability <span class="es">· Disponibilidad</span></label>
+            <select id="appAvailability" name="availability" required>
+              <option value="">Select · Selecciona</option>
+              <option>Full-time · Tiempo completo</option>
+              <option>Part-time · Medio tiempo</option>
+              <option>Weekends only · Solo fines de semana</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appLanguages">Languages <span class="es">· Idiomas</span></label>
+            <select id="appLanguages" name="languages">
+              <option>English &amp; Spanish · Inglés y Español</option>
+              <option>English only</option>
+              <option>Spanish only · Español solamente</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="appMessage">Tell us about yourself <span class="es">· Cuéntanos sobre ti</span></label>
+          <textarea id="appMessage" name="message" placeholder="Previous experience, why you'd like to join the team..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-tan btn-submit"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
+        <p class="modal-footer-note">By submitting, you agree to be contacted about employment opportunities at El Dorado Tienda Latina.</p>
+      </form>
+      <div class="form-success" id="applySuccess">
+        <i class="fa-solid fa-circle-check"></i>
+        <h4>¡Gracias! Application Received</h4>
+        <p>We'll review your information and reach out soon. Nos comunicaremos pronto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== REVIEW MODAL ===================== -->
+<div class="modal-overlay" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="reviewTitle">Leave a Review · Deja tu reseña</h3>
+      <p>Share your experience — your feedback helps our family grow. Tu opinión nos ayuda mucho.</p>
+      <button type="button" class="modal-close" aria-label="Close modal" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="reviewForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="revName">Your Name <span class="es">· Tu nombre</span></label>
+            <input type="text" id="revName" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="revEmail">Email <span class="es">· Correo</span></label>
+            <input type="email" id="revEmail" name="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Rating <span class="es">· Tu calificación</span></label>
+          <div class="star-input" id="starInput" role="radiogroup" aria-label="Rating">
+            <span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span>
+          </div>
+          <input type="hidden" name="rating" id="ratingValue" value="5" />
+        </div>
+        <div class="form-group">
+          <label for="revText">Your Review <span class="es">· Tu reseña</span></label>
+          <textarea id="revText" name="review" placeholder="Tell us what you loved... Cuéntanos qué te gustó..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-tan btn-submit"><i class="fa-solid fa-paper-plane"></i> Submit Review · Enviar reseña</button>
+        <p class="modal-footer-note">Reviews may also be shared on our public Google profile.</p>
+      </form>
+      <div class="form-success" id="reviewSuccess">
+        <i class="fa-solid fa-circle-check"></i>
+        <h4>¡Mil gracias! Review Submitted</h4>
+        <p>Thank you for taking the time to share. We truly appreciate it!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    // Open / close modals
+    var openButtons = document.querySelectorAll('[data-open-modal]');
+    openButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var id = btn.getAttribute('data-open-modal');
+        var modal = document.getElementById(id);
+        if(modal){
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          var firstInput = modal.querySelector('input, select, textarea');
+          if(firstInput){ setTimeout(function(){ firstInput.focus(); }, 80); }
+        }
+      });
+    });
+
+    function closeModal(modal){
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+      overlay.addEventListener('click', function(e){
+        if(e.target === overlay) closeModal(overlay);
+      });
+    });
+    document.querySelectorAll('[data-close-modal]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var overlay = btn.closest('.modal-overlay');
+        if(overlay) closeModal(overlay);
+      });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        document.querySelectorAll('.modal-overlay.active').forEach(closeModal);
+      }
+    });
+
+    // Employment nav link triggers modal
+    document.querySelectorAll('a[href="#employment-apply"]').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('applyModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Star rating widget
+    var starInput = document.getElementById('starInput');
+    var ratingValue = document.getElementById('ratingValue');
+    if(starInput){
+      var stars = starInput.querySelectorAll('span');
+      function paint(n){
+        stars.forEach(function(s, i){ s.classList.toggle('on', i < n); });
+      }
+      paint(5);
+      stars.forEach(function(star){
+        star.addEventListener('mouseenter', function(){ paint(parseInt(star.getAttribute('data-val'),10)); });
+        star.addEventListener('click', function(){
+          var v = parseInt(star.getAttribute('data-val'),10);
+          ratingValue.value = v;
+          paint(v);
+        });
+      });
+      starInput.addEventListener('mouseleave', function(){ paint(parseInt(ratingValue.value,10) || 5); });
+    }
+
+    // Form submit handlers (front-end only — show success)
+    function handleSubmit(formId, successId){
+      var form = document.getElementById(formId);
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){ form.reportValidity(); return; }
+        form.style.display = 'none';
+        document.getElementById(successId).classList.add('show');
+      });
+    }
+    handleSubmit('applyForm', 'applySuccess');
+    handleSubmit('reviewForm', 'reviewSuccess');
+  })();
+</script>
+
+</body>
+</html>

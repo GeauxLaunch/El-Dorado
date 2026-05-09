@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Products & Store · El Dorado Tienda Latina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root{
+    --cream:#faf6ef;
+    --cream-2:#f1ece2;
+    --tan:#b08658;
+    --tan-2:#c89a6b;
+    --tan-deep:#8f6a3f;
+    --ink:#1a1a1a;
+    --muted:#6b6b6b;
+    --green:#2f5d3a;
+    --red:#b94a3d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+  .top-bar{background:#000;height:14px}
+  header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1320px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#3a6b48,#74a564);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;letter-spacing:.5px;border:2px solid #2f5d3a;position:relative;overflow:hidden}
+  .logo-mark::after{content:"";position:absolute;inset:6px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#9bcc7a,#3a7a4a);}
+  .logo-mark span{position:relative;z-index:2;font-size:11px}
+  .logo-text{display:flex;flex-direction:column;line-height:1}
+  .logo-text .brand{color:var(--tan);font-weight:800;font-size:20px;letter-spacing:.5px}
+  .logo-text .sub{color:#9c8867;font-size:9px;letter-spacing:3px;margin-top:3px;font-weight:600}
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#222;padding:10px 18px;border-radius:8px;border:1px solid #e1d8c6;background:#fff;transition:all .15s}
+  .back-link:hover{border-color:var(--tan);color:var(--tan);transform:translateX(-2px)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .phone{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#222;transition:color .15s}
+  .phone:hover{color:var(--tan)}
+  .phone i{color:var(--tan)}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#1f1108 0%,#3b2616 60%,#5b3924 100%);color:#fff;padding:64px 0 48px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:url('images/PHOTO-2026-05-08-14-12-52-4.jpg');background-size:cover;background-position:center;opacity:.18;mix-blend-mode:luminosity}
+  .hero-inner{position:relative;z-index:2}
+  .hero .eyebrow{display:inline-block;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:6px 16px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;max-width:900px}
+  .hero h1 .accent{color:var(--tan-2);font-style:normal}
+  .hero p{font-size:16px;line-height:1.6;max-width:620px;margin-top:18px;opacity:.9}
+
+  /* FILTERS */
+  .filter-bar{background:#fff;border-bottom:1px solid #eee;position:sticky;top:78px;z-index:40;padding:14px 0}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .pill-btn{padding:9px 18px;border-radius:999px;border:1px solid #e1d8c6;background:#fff;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;color:#444;transition:all .15s;display:inline-flex;align-items:center;gap:7px}
+  .pill-btn .es{font-weight:400;opacity:.7;font-size:12px}
+  .pill-btn:hover{border-color:var(--tan);color:var(--tan-deep);transform:translateY(-1px)}
+  .pill-btn.active{background:var(--tan);color:#fff;border-color:var(--tan);box-shadow:0 4px 12px rgba(176,134,88,.3)}
+  .pill-btn.active .es{opacity:.9;color:#fff}
+  .pill-btn .count{background:rgba(0,0,0,.06);color:#888;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
+  .pill-btn.active .count{background:rgba(255,255,255,.25);color:#fff}
+
+  /* GRID */
+  .gallery-section{padding:48px 0 80px}
+  .gallery-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;color:#666;font-size:14px;flex-wrap:wrap;gap:8px}
+  .gallery-meta .count-display{font-weight:600;color:#333}
+  .gallery-meta .count-display strong{color:var(--tan-deep);font-size:18px;margin-right:4px}
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .photo{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;cursor:zoom-in;background:#222;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .25s, box-shadow .25s, opacity .3s}
+  .photo:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+  .photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .photo:hover img{transform:scale(1.06)}
+  .photo .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 50%);opacity:0;transition:opacity .25s}
+  .photo:hover .ov{opacity:1}
+  .photo .ov i{position:absolute;bottom:14px;right:14px;color:#fff;font-size:18px;background:rgba(0,0,0,.4);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+  .photo .ov .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:var(--tan-deep);padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+  .photo[hidden]{display:none}
+  .empty-state{text-align:center;padding:60px 20px;color:#888}
+  .empty-state i{font-size:42px;color:#cdbfa6;margin-bottom:14px}
+  .empty-state h3{font-size:20px;color:#333;margin-bottom:6px;font-weight:700}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+  .lightbox.active{display:flex}
+  .lightbox img{max-width:95vw;max-height:88vh;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.6);object-fit:contain}
+  .lightbox .lb-close,.lightbox .lb-prev,.lightbox .lb-next{position:absolute;background:rgba(255,255,255,.12);border:none;color:#fff;cursor:pointer;backdrop-filter:blur(8px);transition:background .15s, transform .15s;font-size:18px}
+  .lightbox .lb-close{top:20px;right:20px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .lightbox .lb-prev,.lightbox .lb-next{top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .lightbox .lb-prev{left:20px}
+  .lightbox .lb-next{right:20px}
+  .lightbox .lb-close:hover,.lightbox .lb-prev:hover,.lightbox .lb-next:hover{background:rgba(255,255,255,.22)}
+  .lightbox .lb-meta{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.5);padding:8px 18px;border-radius:999px;font-size:13px;backdrop-filter:blur(6px)}
+
+  /* FOOTER */
+  footer{background:#161616;color:#cfcfcf;padding:48px 0 22px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:28px}
+  .foot-brand p{color:#a8a8a8;font-size:13px;line-height:1.7;margin:18px 0 0;max-width:340px}
+  footer h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:14px}
+  .foot-list{list-style:none}
+  .foot-list li{padding:5px 0;font-size:14px}
+  .foot-list a{color:#bdbdbd}
+  .foot-list a:hover{color:var(--tan)}
+  .foot-bottom{border-top:1px solid #2a2a2a;padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#888;flex-wrap:wrap;gap:10px}
+  .powered-by{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#9a9a9a;letter-spacing:.4px}
+  .powered-by .gl-brand{font-weight:800;letter-spacing:.6px;font-size:13px}
+  .powered-by .gl-brand .geaux{color:#fff}
+  .powered-by .gl-brand .launch{color:#3b82f6}
+  .powered-by .gl-spark{color:#3b82f6;font-size:10px}
+  .powered-by:hover .gl-brand .launch{color:#60a5fa;transition:color .15s}
+
+  /* RESPONSIVE */
+  @media (max-width:1000px){
+    .gallery-grid{grid-template-columns:repeat(3,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  }
+  @media (max-width:680px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .filter-bar{top:78px}
+    .pill-btn{padding:7px 14px;font-size:12px}
+    .pill-btn .es{display:none}
+    .nav-right .phone{display:none}
+    .lightbox .lb-prev,.lightbox .lb-next{width:44px;height:44px;font-size:16px}
+  }
+  @media (max-width:420px){
+    .gallery-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><span>EL<br>D</span></div>
+      <div class="logo-text">
+        <span class="brand">El Dorado</span>
+        <span class="sub">TIENDA LATINA</span>
+      </div>
+    </a>
+    <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home · Volver</a>
+    <div class="nav-right">
+      <a href="tel:+12254541345" class="phone"><i class="fa-solid fa-phone"></i> (225) 454-1345</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow">Galería · Our Products & Store</span>
+    <h1>Take a Look <span class="accent">Around the Aisles</span></h1>
+    <p>Una vista completa de la tienda — from fresh produce and pan dulce to imported snacks, sazón, and household essentials. Tap a category below to explore, or click any photo to view it up close.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filters" id="filters">
+      <button class="pill-btn active" data-filter="all">All <span class="es">· Todos</span> <span class="count" data-count="all"></span></button>
+      <button class="pill-btn" data-filter="bread">Bread <span class="es">· Pan</span> <span class="count" data-count="bread"></span></button>
+      <button class="pill-btn" data-filter="snacks">Snacks <span class="es">· Botanas</span> <span class="count" data-count="snacks"></span></button>
+      <button class="pill-btn" data-filter="drinks">Drinks <span class="es">· Bebidas</span> <span class="count" data-count="drinks"></span></button>
+      <button class="pill-btn" data-filter="groceries">Groceries <span class="es">· Despensa</span> <span class="count" data-count="groceries"></span></button>
+      <button class="pill-btn" data-filter="produce">Produce <span class="es">· Frutas</span> <span class="count" data-count="produce"></span></button>
+      <button class="pill-btn" data-filter="meat">Meat &amp; Dairy <span class="es">· Lácteos</span> <span class="count" data-count="meat"></span></button>
+      <button class="pill-btn" data-filter="spices">Spices <span class="es">· Sazón</span> <span class="count" data-count="spices"></span></button>
+      <button class="pill-btn" data-filter="candy">Sweets <span class="es">· Dulces</span> <span class="count" data-count="candy"></span></button>
+      <button class="pill-btn" data-filter="household">Household <span class="es">· Hogar</span> <span class="count" data-count="household"></span></button>
+      <button class="pill-btn" data-filter="store">Around the Store <span class="es">· La Tienda</span> <span class="count" data-count="store"></span></button>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-meta">
+      <div class="count-display"><strong id="visibleCount">0</strong>photos in <span id="filterName">all categories</span></div>
+      <div>Click any photo to view full size · Toca cualquier foto</div>
+    </div>
+
+    <div class="gallery-grid" id="grid">
+      <!-- Bread / Pan -->
+      <div class="photo" data-cat="bread"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53.jpg" alt="Fresh semitas and pan dulce"><div class="ov"><span class="tag">Pan</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="bread"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-2.jpg" alt="Bredy bread and Charamas"><div class="ov"><span class="tag">Pan</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="bread"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-5.jpg" alt="Polvorón and yema sweet bread"><div class="ov"><span class="tag">Pan</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Snacks / Botanas -->
+      <div class="photo" data-cat="snacks"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52.jpg" alt="Snack and cookie aisle"><div class="ov"><span class="tag">Snacks</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="snacks"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-4.jpg" alt="Chips aisle"><div class="ov"><span class="tag">Snacks</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="snacks"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-11.jpg" alt="Bimbo display"><div class="ov"><span class="tag">Snacks</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Drinks / Bebidas -->
+      <div class="photo" data-cat="drinks"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-51-2.jpg" alt="Soda and juice fridge"><div class="ov"><span class="tag">Bebidas</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="drinks"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-51-3.jpg" alt="Imported drinks fridge"><div class="ov"><span class="tag">Bebidas</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Groceries / Despensa -->
+      <div class="photo" data-cat="groceries"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-4.jpg" alt="Coffee creamers and chocolate"><div class="ov"><span class="tag">Despensa</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="groceries"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-8.jpg" alt="Café Oro and Café El Indio"><div class="ov"><span class="tag">Despensa</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="groceries"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-14.jpg" alt="Choco Listo and Coffee Mate"><div class="ov"><span class="tag">Despensa</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="groceries"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-8.jpg" alt="Ducal beans"><div class="ov"><span class="tag">Despensa</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="groceries"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56.jpg" alt="La Sirena canned goods"><div class="ov"><span class="tag">Despensa</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Produce / Frutas -->
+      <div class="photo" data-cat="produce"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-51.jpg" alt="Fresh plantains and produce"><div class="ov"><span class="tag">Frutas</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Meat & Dairy / Lácteos -->
+      <div class="photo" data-cat="meat"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-50.jpg" alt="Refrigerated meats and cheese"><div class="ov"><span class="tag">Lácteos</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="meat"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-50-2.jpg" alt="Cheese and dairy fridge"><div class="ov"><span class="tag">Lácteos</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="meat"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-13.jpg" alt="Dairy fridge with cheeses and butter"><div class="ov"><span class="tag">Lácteos</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Spices / Sazón -->
+      <div class="photo" data-cat="spices"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55.jpg" alt="Maggi soup mixes"><div class="ov"><span class="tag">Sazón</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="spices"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-5.jpg" alt="Listto breading mix and rostizador"><div class="ov"><span class="tag">Sazón</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="spices"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-18.jpg" alt="Maggi bouillons"><div class="ov"><span class="tag">Sazón</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="spices"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-5.jpg" alt="Hot sauces and salsas"><div class="ov"><span class="tag">Sazón</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Candy / Dulces -->
+      <div class="photo" data-cat="candy"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54.jpg" alt="Pan dulce and sweet treats"><div class="ov"><span class="tag">Dulces</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Household / Hogar -->
+      <div class="photo" data-cat="household"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-7.jpg" alt="Cleaning supplies and household"><div class="ov"><span class="tag">Hogar</span><i class="fa-solid fa-expand"></i></div></div>
+
+      <!-- Around the Store / La Tienda - all remaining photos -->
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-9.jpg" alt="Front counter"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-2.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-51-4.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-51-5.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-3.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-5.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-6.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-8.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-52-10.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-3.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-4.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-6.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-7.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-8.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-9.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-10.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-12.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-13.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-14.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-53-15.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-2.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-3.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-5.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-6.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-7.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-9.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-10.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-11.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-12.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-13.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-15.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-16.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-17.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-18.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-19.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-20.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-54-21.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-2.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-3.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-4.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-6.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-7.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-9.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-10.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-11.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-12.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-13.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-14.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-15.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-16.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-17.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-19.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-20.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-21.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-22.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-23.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-55-24.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-2.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-3.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-4.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-6.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-7.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-8.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-9.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-10.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-11.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+      <div class="photo" data-cat="store"><img loading="lazy" src="images/PHOTO-2026-05-08-14-12-56-12.jpg" alt="Inside the store"><div class="ov"><span class="tag">La Tienda</span><i class="fa-solid fa-expand"></i></div></div>
+    </div>
+
+    <div class="empty-state" id="emptyState" hidden>
+      <i class="fa-solid fa-camera-retro"></i>
+      <h3>No photos in this category yet</h3>
+      <p>Try another filter or check back soon. Vuelve pronto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lbImg" alt="" />
+  <button class="lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-meta" id="lbMeta">1 / 1</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark"><span>EL<br>D</span></div>
+          <div class="logo-text">
+            <span class="brand" style="color:#fff">El Dorado</span>
+            <span class="sub">TIENDA LATINA</span>
+          </div>
+        </a>
+        <p>Serving the Prairieville community with authentic Latin products, fresh groceries, and a warm, family-friendly atmosphere.</p>
+      </div>
+      <div>
+        <h4>Quick Links · Enlaces</h4>
+        <ul class="foot-list">
+          <li><a href="index.html">Home · Inicio</a></li>
+          <li><a href="index.html#reviews">Reviews · Reseñas</a></li>
+          <li><a href="index.html#employment">Employment · Empleo</a></li>
+          <li><a href="index.html#location">Location · Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us · Visítanos</h4>
+        <ul class="foot-list">
+          <li>37459 Ultimate Plaza Boulevard</li>
+          <li>Prairieville, LA 70769</li>
+          <li><a href="tel:+12254541345">(225) 454-1345</a></li>
+          <li>Open daily · 7AM – 9PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 El Dorado Tienda Latina. All rights reserved.</div>
+      <div>Serving Prairieville, Gonzales, and surrounding communities</div>
+      <a href="https://geauxlaunch.com" target="_blank" rel="noopener" class="powered-by" aria-label="Website by GeauxLaunch">
+        <i class="fa-solid fa-bolt gl-spark"></i>
+        <span>Powered by</span>
+        <span class="gl-brand"><span class="geaux">Geaux</span><span class="launch">Launch</span></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var grid = document.getElementById('grid');
+    var photos = Array.prototype.slice.call(grid.querySelectorAll('.photo'));
+    var filterButtons = document.querySelectorAll('.pill-btn');
+    var emptyState = document.getElementById('emptyState');
+    var visibleCount = document.getElementById('visibleCount');
+    var filterName = document.getElementById('filterName');
+
+    // Update category counts
+    var counts = {all: photos.length};
+    photos.forEach(function(p){
+      var c = p.getAttribute('data-cat');
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var key = el.getAttribute('data-count');
+      el.textContent = counts[key] || 0;
+    });
+
+    var labelMap = {
+      all: 'all categories',
+      bread: 'Pan / Bread',
+      snacks: 'Botanas / Snacks',
+      drinks: 'Bebidas / Drinks',
+      groceries: 'Despensa / Groceries',
+      produce: 'Frutas / Produce',
+      meat: 'Lácteos / Meat & Dairy',
+      spices: 'Sazón / Spices',
+      candy: 'Dulces / Sweets',
+      household: 'Hogar / Household',
+      store: 'Around the Store'
+    };
+
+    function applyFilter(cat){
+      var visible = 0;
+      photos.forEach(function(p){
+        var match = (cat === 'all' || p.getAttribute('data-cat') === cat);
+        p.hidden = !match;
+        if(match) visible++;
+      });
+      filterButtons.forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-filter') === cat);
+      });
+      visibleCount.textContent = visible;
+      filterName.textContent = labelMap[cat] || cat;
+      emptyState.hidden = visible > 0;
+    }
+
+    filterButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var cat = btn.getAttribute('data-filter');
+        history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);
+        applyFilter(cat);
+        window.scrollTo({top: document.querySelector('.gallery-section').offsetTop - 160, behavior: 'smooth'});
+      });
+    });
+
+    // Initial filter from URL hash
+    var initial = (location.hash || '').replace('#','').toLowerCase();
+    var validCats = ['all','bread','snacks','drinks','groceries','produce','meat','spices','candy','household','store'];
+    if(validCats.indexOf(initial) === -1) initial = 'all';
+    applyFilter(initial);
+
+    // Lightbox
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var lbMeta = document.getElementById('lbMeta');
+    var lbClose = document.getElementById('lbClose');
+    var lbPrev = document.getElementById('lbPrev');
+    var lbNext = document.getElementById('lbNext');
+    var currentIdx = 0;
+    var visiblePhotos = [];
+
+    function getVisible(){
+      return photos.filter(function(p){ return !p.hidden; });
+    }
+
+    function openLightbox(idx){
+      visiblePhotos = getVisible();
+      currentIdx = idx;
+      var p = visiblePhotos[idx];
+      var img = p.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbMeta.textContent = (idx + 1) + ' / ' + visiblePhotos.length;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function step(delta){
+      if(!visiblePhotos.length) return;
+      currentIdx = (currentIdx + delta + visiblePhotos.length) % visiblePhotos.length;
+      var img = visiblePhotos[currentIdx].querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbMeta.textContent = (currentIdx + 1) + ' / ' + visiblePhotos.length;
+    }
+
+    photos.forEach(function(p, i){
+      p.addEventListener('click', function(){
+        var visList = getVisible();
+        var idx = visList.indexOf(p);
+        if(idx >= 0) openLightbox(idx);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', function(){ step(-1); });
+    lbNext.addEventListener('click', function(){ step(1); });
+    lb.addEventListener('click', function(e){ if(e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', function(e){
+      if(!lb.classList.contains('active')) return;
+      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft') step(-1);
+      if(e.key === 'ArrowRight') step(1);
+    });
+  })();
+</script>
+
+</body>
+</html>
